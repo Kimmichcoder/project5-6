@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>前端基础作业</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #666;
+}
+
+.banner-wrap {
+  width: 100%;
+  min-width: 960px;
+  height: 80px;
+  position: relative;
+}
+
+.content {
+  width: 1180px;
+  margin: 100px auto 0;
+}
+.rtx-top {
+  width: 100%;
+  min-width: 960px;
+  height: 80px;
+  background: #0b61b8;
+  z-index: 1;
+}
+
+.rtx-top .rtx-top-banner {
+  width: 100%;
+  padding-left: 30px;
+  line-height: 80px;
+}
+
+.rtx-top-banner .title {
+  color: white;
+}
+.panel {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-top: none;
+  border: 1px solid #e0e0e0;
+  height: 390px;
+  overflow: hidden;
+}
+
+.panel-left {
+  position: relative;
+  width: 187px;
+  height: 360px;
+  padding: 0 20px 15px;
+  overflow: hidden;
+}
+
+.panel-right {
+  flex: 1;
+  height: 375px;
+  padding: 15px 19px 0;
+  border-left: 1px dotted #a3a3a3;
+}
+.panel {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-top: none;
+  border: 1px solid #e0e0e0;
+  height: 390px;
+  overflow: hidden;
+}
+
+.panel-left {
+  position: relative;
+  width: 187px;
+  height: 360px;
+  padding: 0 20px 15px;
+  overflow: hidden;
+}
+
+.panel-right {
+  flex: 1;
+  height: 375px;
+  padding: 15px 19px 0;
+  border-left: 1px dotted #a3a3a3;
+}
+.keyword-list {
+  margin: 0 0 7px;
+  overflow: hidden;
+  position: relative;
+}
+
+dt {
+  padding: 4px 0 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 34px;
+}
+
+dd {
+  margin-left: -10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  zoom: 1;
+  display: inline-block;
+}
+
+.entrance-item {
+  position: relative;
+  float: left;
+  display: block;
+  border-left: 1px solid #ececec;
+  padding: 0 10px;
+  line-height: 18px;
+  height: 18px;
+  margin: 7px 0;
+}
+
+.entrance-item a {
+  color: #666;
+  font-size: 12px;
+}
+
+.entrance-item a:hover {
+  color: #3983e5;
+}
+.product-nav {
+  height: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.product-nav li {
+  line-height: 20px;
+  margin-right: 15px;
+  padding: 0 8px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #3983e5;
+}
+
+.product-nav .active,
+.product-nav>li:hover {
+  background: #3983e5;
+  color: #fff;
+  border-radius: 3px;
+}
+.produce-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: -10px;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  margin: 0 0 10px 10px;
+  transition: all .2s linear;
+  overflow: hidden;
+  height: 160px;
+  position: relative;
+  width: 220px;
+}
+
+.product-item:hover {
+  box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+}
+
+.product-item:hover img {
+  transform: scale(1.05);
+}
+
+.product-item-thumbnail {
+  height: 110px;
+  margin-bottom: 3px;
+  overflow: hidden;
+  position: relative;
+  width: 220px;
+}
+
+.product-item-thumbnail img {
+  transition: transform .3s ease 0s;
+  width: 220px;
+  border: none;
+  vertical-align: middle;
+}
+
+.product-item-name {
+  position: relative;
+  height: 20px;
+  line-height: 20px;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.product-item-info {
+  position: relative;
+  height: 35px;
+  text-align: right;
+  padding: 0 5px;
+}
+
+.price {
+  float: right;
+  font: 22px/1.5 tahoma;
+  color: #f60;
+}
+
+.price dfn {
+  vertical-align: 7px;
+  font: 12px/1.5 arial;
+  color: #666;
+  margin-right: 2px;
+}
+
+.price .price_info {
+  margin-left: 3px;
+  vertical-align: 2px;
+  font: 12px/1.5 "Microsoft yahei";
+  color: #666;
+}
+  </style>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+<script>
+    const data = {
+    "HuangShan": {
+      "productId": 3,
+      "name": "黄山",
+      "tabContentLst": [
+        {
+          "img": "https://dimg03.c-ctrip.com/images/10010p000000g1ipu47D7_C_500_280.jpg",
+          "prdNme": "黄山+宏村4日3晚跟团游(4钻)·【经典热卖·口碑优选】20人小团·满2成人立减200『1晚夜宿1600米黄山顶·缤纷秋色入画来·日出云海+2晚市区5钻·CBD商圈闹中取静·逛吃方便』不得不来的人气景点黄山+宏村&含门票+往返景交 ",
+          "price": {
+            "amt": 1849
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/0303l120008qi8w679380_C_500_280.jpg",
+          "prdNme": "黄山+宏村3日2晚跟团游(5钻)·【携程自营·诗画徽州】20人小团『AB线挂牌五星酒店/CD线洲际旗下·皇冠假日酒店&赠皇冠自助晚餐』连住不挪窝&登黄山览胜景+水墨宏村+半天自由活动&赠黄山往返景交+接送站 7*24H旅行客服",
+          "price": {
+            "amt": 1159
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/300l190000016fzdh0E19_C_500_280.jpg",
+          "prdNme": "黄山3日2晚跟团游(4钻)·CEO推荐.2人减160 黄山赏秋『1晚山顶四星标间+2早3正餐+登山3宝+38元景交+24h免费接送』观日出云海.日落晚霞 导游带领登山.深度游大好河山|CD线2晚市区连住赠水墨宏村|专属私人管家|秋游热荐",
+          "price": {
+            "amt": 1196
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/300112000000ss9w496C6_C_500_280.jpg",
+          "prdNme": "安徽黄山+宏村3日2晚跟团游(4钻)·人气产品·月销奇迹·20人小团『1晚黄山山顶标间+A线宿市区逛老街/C线宿宏村奇墅湖赠阿菊演出』日出日落/西海大峡谷/水墨宏村 含景点门票+往返景交+免费接送站+1对1私人管家·100%纯玩",
+          "price": {
+            "amt": 1702
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/0302q120008xf07vw3E26_C_500_280.jpg",
+          "prdNme": "宏村+婺源3日2晚跟团游(5钻)·【携程自营·天凉好个秋】20人小团 漫步篁岭| 晒秋人家·天街古巷+行摄宏村| 多彩秋色 2晚连住市区五星酒店&自由逛老街+门票缆车全含 赠24H接送站 纯玩/一站式服务/轻松不累 爸妈放心游",
+          "price": {
+            "amt": 1189
+          }
+        },
+        {
+          "img": "https://dimg03.c-ctrip.com/images/fd/tg/g4/M09/B5/34/CggYHVZdCySAMYCNABVKJzG8yZg854_C_500_280.jpg",
+          "prdNme": "黄山3日2晚跟团游(4钻)·秋游热点@2人立减88|长者享立减『1晚宿山顶+1晚老街5钻酒店+2早3正餐+黄山38元景交+赠登山3宝』宿1600米山顶观日出云海|暖心导游伴游登山|山顶标间或多人可选|宏村景点可选|纯玩安心游",
+          "price": {
+            "amt": 1459
+          }
+        },
+        {
+          "img": "https://dimg03.c-ctrip.com/images/100c0z000000nbvinF35C_C_500_280.jpg",
+          "prdNme": "黄山+宏村4日自由行(4钻)·【1晚黄山市区+1晚黄山山顶+1晚宏村内】看“牛形村落”-宏村 · 南湖春晓，月沼风荷，双溪映碧 | 入住山顶1晚 · 坐看日出日落 · 峰峦如幻 · 奇石林立 『高铁往返 』",
+          "price": {
+            "amt": 1147
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/300j14000000x3hz0C4AC_C_500_280.jpg",
+          "prdNme": "黄山风景区3日2晚跟团游(4钻)·【携程自营·多彩黄山】2成人立减100元 20人小团 AB线·1晚市区5钻酒店+1晚黄山山顶标间·观日出云海『后山上·前山下·不走回头路&行程更轻松』|CD线·2晚连住市区酒店【黄山一地·推荐线路】",
+          "price": {
+            "amt": 1129
+          }
+        }
+      ]
+    },
+    "ShangHai": {
+      "productId": 2,
+      "name": "上海",
+      "tabContentLst": [
+        {
+          "img": "https://dimg04.c-ctrip.com/images/03025120008vokgk294A5_C_500_280.png",
+          "prdNme": "露营·|上海美帆精致露营2日过夜体验| 【Glamping套装租赁】美学生活/自助搭建，含精致帐篷+天幕+桌椅，一应俱全+24小时热水淋浴，多项目玩乐可选，体验淀山湖畔自然生活",
+          "price": {
+            "amt": 428
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/300v0x000000liuks9C9C_C_500_280.jpg",
+          "prdNme": "上海2日1晚自由行(4钻)·【亲子游&萌娃的爱】住海昌海洋公园度假酒店1晚+上海海昌海洋公园门票2张·跨日无限次入园！畅游2日玩到爽！海豚 企鹅 美人鱼|和海洋生物亲密接触！",
+          "price": {
+            "amt": 640
+          }
+        },
+        {
+          "img": "https://dimg03.c-ctrip.com/images/fd/tg/g2/M07/8B/4D/Cghzf1Ww4EKAIJf0AA-a5kIApP4409_C_500_280.jpg",
+          "prdNme": "华东5市+乌镇6日5晚跟团游(4钻)·赏秋品蟹+升2晚5钻+4正餐50餐标+含灵山门票&升级梵宫自助【自营力荐·枕水华东】儿童含早「精华全含」乌镇+周庄双水乡 西湖游船+赠送周庄电瓶车【真纯玩无购物】",
+          "price": {
+            "amt": 1149
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/0301m120008jvszyl7522_C_500_280.jpg",
+          "prdNme": "上海+苏州+杭州+乌镇5日4晚跟团游(5钻)·古镇枫叶&杭城桂雨&金秋品蟹·全程5钻&1晚乌镇·汉服体验『自营精品·纯玩打卡』宿乌镇内/外可选【明星漫游·步入江南百景】宋城自选 20%空座率『餐标50 水乡宴&桃源餐&龙井品茶』",
+          "price": {
+            "amt": 949
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/0302a120008s16afjB861_C_500_280.png",
+          "prdNme": "上海+苏州+杭州+乌镇4日3晚跟团游(5钻)·2成人立减200『西塘抖音大赛赢好礼！赠西溪摇橹船·夜宿乌镇5钻客栈·登高赏上海夜景+深度西湖+西栅提灯走桥+世遗留园·餐标50水乡宴&龙井茶宴』赠西湖手绘地图一车到底不拼团",
+          "price": {
+            "amt": 699
+          }
+        },
+        {
+          "img": "https://dimg03.c-ctrip.com/images/100d0u000000iuw5z6A17_C_500_280.jpg",
+          "prdNme": "上海2-10日自由行·【超级自由行】出游天数自定义 · 支持双酒店体验 · 酒店星级随心选 · 行程自由搭配 · 一站式满足出游需求【外滩/南京路/迪士尼度假区/淮海路/静安寺 摩登上海 等你开启】『不含大交通』",
+          "price": {
+            "amt": 262
+          }
+        },
+        {
+          "img": "https://dimg03.c-ctrip.com/images/100a0t000000ipwplA539_C_500_280.jpg",
+          "prdNme": "上海迪士尼（Disney）+杭州+苏州+乌镇5日4晚跟团游(5钻)·可选迪士尼Vip礼宾 金秋纯玩『+1元购80餐劵』三5A·世遗留园+网红乌镇日与夜+深度西湖·南北全景+外滩专属服务中心【夜宿乌镇】三宴·高餐标50元",
+          "price": {
+            "amt": 1599
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/300m0a0000004nrr2249A_C_500_280.jpg",
+          "prdNme": "上海+苏州+杭州+无锡+南京+乌镇6日5晚跟团游(4钻)·纯玩小团【升2晚5钻宿乌镇+网红拈花湾客栈+赠汉服游园】2进西栅+拈花湾深度游『登雷峰塔+飞来峰寻宝』4正餐50餐标&景区自助+儿童含早 赠禅夜秀 行程轻松 赠24H接机 ",
+          "price": {
+            "amt": 992
+          }
+        }
+      ]
+    },
+    "HangZhou": {
+      "productId": 3,
+      "name": "杭州",
+      "tabContentLst": [
+        {
+          "img": "https://dimg04.c-ctrip.com/images/0302e120008jvszir91BF_C_500_280.jpg",
+          "prdNme": "苏州+乌镇+杭州3日2晚跟团游(5钻)·戏剧节！古镇枫叶&杭城桂雨&金秋品蟹·全程5钻+1晚乌镇·汉服体验『自营精品』宿乌镇内/外可选【明星漫游·江南百景】20%空座率『三顿餐标50 水乡宴&桃源餐&龙井品茶』",
+          "price": {
+            "amt": 549
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/0303u120006swk805EF4A_C_500_280.jpg",
+          "prdNme": "苏州+乌镇+杭州3日2晚跟团游(5钻)·明星万人纯玩『全程5钻+夜宿乌镇 深度西湖·南北全景』三5A景丨世遗·留园+网红乌镇日夜景+全景西湖丨甄选全明星阵容 专车专导【三宴50高餐标】苏宴+乌镇水乡宴+乾隆御茶宴",
+          "price": {
+            "amt": 543
+          }
+        },
+        {
+          "img": "https://dimg03.c-ctrip.com/images/fd/tg/g2/M07/8B/4D/Cghzf1Ww4EKAIJf0AA-a5kIApP4409_C_500_280.jpg",
+          "prdNme": "华东5市+乌镇6日5晚跟团游(4钻)·赏秋品蟹+升2晚5钻+4正餐50餐标+含灵山门票&升级梵宫自助【自营力荐·枕水华东】儿童含早「精华全含」乌镇+周庄双水乡 西湖游船+赠送周庄电瓶车【真纯玩无购物】",
+          "price": {
+            "amt": 1149
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/300l12000000rva7m3963_C_500_280.jpg",
+          "prdNme": "苏州+乌镇+杭州3日2晚跟团游(4钻)·【苏州5钻+乌镇4/5钻酒店】一天一城+纯玩  乌镇日/夜景+5A园林+寒山寺+船游西湖/可选宋城千古情 B/C线宿5钻乌镇外/内酒店，可多次入园+免费电瓶车+泳池 含2早可选杭州御茶宴  ",
+          "price": {
+            "amt": 499
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/300k0q000000gj411B3E4_C_500_280.jpg",
+          "prdNme": "杭州+乌镇+西塘3日2晚跟团游(5钻)·错峰赏秋『夜宿乌镇5钻+升级杭州挂牌5星&网红乌镇玩1整天』5钻自助早&50御茶宴【经典5A3水乡 乌镇+南浔+西塘】赠200元自费双游船 门票超450元【B线下午出发 D线含宋城】纯玩优选",
+          "price": {
+            "amt": 498
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/0301m120008jvszyl7522_C_500_280.jpg",
+          "prdNme": "上海+苏州+杭州+乌镇5日4晚跟团游(5钻)·古镇枫叶&杭城桂雨&金秋品蟹·全程5钻&1晚乌镇·汉服体验『自营精品·纯玩打卡』宿乌镇内/外可选【明星漫游·步入江南百景】宋城自选 20%空座率『餐标50 水乡宴&桃源餐&龙井品茶』",
+          "price": {
+            "amt": 949
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/300g0s000000hzkxa432D_C_500_280.jpg",
+          "prdNme": "乌镇+杭州2日1晚跟团游·赏西栅日夜全景 纯玩无购物【一整天360打卡网红乌镇】拒绝走马观花+【泛舟西湖赏美景】+A线住乌镇自营5钻客栈+多次入园+赠晚餐，可升级C线入住乌镇西栅景区内5钻酒店",
+          "price": {
+            "amt": 399
+          }
+        },
+        {
+          "img": "https://dimg04.c-ctrip.com/images/0302a120008s16afjB861_C_500_280.png",
+          "prdNme": "上海+苏州+杭州+乌镇4日3晚跟团游(5钻)·2成人立减200『西塘抖音大赛赢好礼！赠西溪摇橹船·夜宿乌镇5钻客栈·登高赏上海夜景+深度西湖+西栅提灯走桥+世遗留园·餐标50水乡宴&龙井茶宴』赠西湖手绘地图一车到底不拼团",
+          "price": {
+            "amt": 699
+          }
+        }
+      ]
+    }
+  }
+</script>
+  <div class="main">
+    <div class="banner-wrap">
+        <div class="banner-wrap">
+      <div class="rtx-top">
+        <div class="rtx-top-banner">
+          <h1 class="title">2107010316X</h1>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="content">
+        <div class="panel">
+        <div class="panel-left">
+  <dl class="keyword-list">
+  <dt>热门主题游</dt>
+  <dd>
+  	<span class="entrance-item"><a href="https://www.baidu.com/" target="_blank">海岛</a></span>
+  </dd>
+  <dd>
+  	<span class="entrance-item"><a href="https://www.baidu.com/" target="_blank">古镇</a></span>
+  </dd>
+  <dd>
+  	<span class="entrance-item"><a href="https://www.baidu.com/" target="_blank">蜜月</a></span>
+  </dd>
+  <dd>
+  	<span class="entrance-item"><a href="https://www.baidu.com/" target="_blank">亲子</a></span>
+  </dd>
+  <dd>
+  	<span class="entrance-item"><a href="https://www.baidu.com/" target="_blank">美食</a></span>
+  </dd>
+    <dt>热门目的地</dt>
+  <dd>
+  	<span class="entrance-item"><a href="https://www.baidu.com/" target="_blank">黄山</a></span>
+  </dd>
+  <dd>
+  	<span class="entrance-item"><a href="https://www.baidu.com/" target="_blank">上海</a></span>
+  </dd>
+  <dd>
+  	<span class="entrance-item"><a href="https://www.baidu.com/" target="_blank">杭州</a></span>
+  </dd>
+  </dl>
+        </div>
+       <div class="panel-right">
+  <ul class="product-nav">
+  	<!-- 动态导航 js动态插入-->
+    <script>
+  let productLi = ''
+  const setProductLi = () => {
+    Object.keys(data).forEach(key => {
+      productLi += `<li product-name="${key}">${data[key].name}</li>`
+    })
+    $('.product-nav').html(productLi)
+    productLi = ''
+  }
+  setProductLi()
+
+
+  $('.product-nav').click(function(e) {
+    if (e.target.nodeName !== 'LI') {
+      return
+    }
+    const currentLi = $(e.target)
+    currentLi.addClass('active').siblings().removeClass('active')
+    const name = currentLi.attr('product-name')
+    updateHtml(name)
+  })
+
+    </script>
+  </ul>
+  <div class="produce-content">
+  	<!-- 动态内容 js动态插入-->
+   <script>
+  /** 创建每个卡片所渲染的html */
+  const setProductContent = (data) => {
+    return `
+      <div class="product-item">
+          <a href="${data.img}" target="_blank">
+            <div class="product-item-thumbnail">
+              <img src="${data.img}" alt="">
+            </div>
+          </a>
+          <p class="product-item-name">
+            ${data.prdNme}
+          </p>
+          <p class="product-item-info">
+            <span class="price"><dfn>¥</dfn>${data.price.amt}<i class="price_info">起</i></span>
+          </p>
+      </div>
+    `
+  }
+  // 循环存储的变量值
+  let productContent = ''
+  // 因为我们点击不同的li需要更新我们的对应展示的数据，所以提供一个更新图片列表的函数
+  /** 循环更新目的地数据 */
+  const updateHtml = (name = 'HuangShan') => {
+    const currentData = data[name]
+    currentData['tabContentLst'].forEach(tab => {
+      productContent += setProductContent(tab)
+    })
+    // 给当前点击的li增加选中的class 进行高亮
+    $(`li[product-name=${name}]`).addClass('active')
+    $('.produce-content').html(productContent)
+    productContent = ''
+  }
+  updateHtml() // 执行一次默认创建
+   </script>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

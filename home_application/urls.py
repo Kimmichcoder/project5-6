@@ -27,4 +27,5 @@ urlpatterns = (
     url(r'^python_homework31/$', views.python_homework31),
     url(r'^python_homework32/$', views.python_homework32),
     url(r'^python_homework33/$', views.python_homework33),
+    url(r"^frontend/$", views.frontend),
 )

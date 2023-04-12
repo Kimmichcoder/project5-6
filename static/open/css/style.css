@@ -1,0 +1,226 @@
+    * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #666;
+}
+
+.banner-wrap {
+  width: 100%;
+  min-width: 960px;
+  height: 80px;
+  position: relative;
+}
+
+.content {
+  width: 1180px;
+  margin: 100px auto 0;
+}
+.rtx-top {
+  width: 100%;
+  min-width: 960px;
+  height: 80px;
+  background: #0b61b8;
+  z-index: 1;
+}
+
+.rtx-top .rtx-top-banner {
+  width: 100%;
+  padding-left: 30px;
+  line-height: 80px;
+}
+
+.rtx-top-banner .title {
+  color: white;
+}
+.panel {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-top: none;
+  border: 1px solid #e0e0e0;
+  height: 390px;
+  overflow: hidden;
+}
+
+.panel-left {
+  position: relative;
+  width: 187px;
+  height: 360px;
+  padding: 0 20px 15px;
+  overflow: hidden;
+}
+
+.panel-right {
+  flex: 1;
+  height: 375px;
+  padding: 15px 19px 0;
+  border-left: 1px dotted #a3a3a3;
+}
+.panel {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-top: none;
+  border: 1px solid #e0e0e0;
+  height: 390px;
+  overflow: hidden;
+}
+
+.panel-left {
+  position: relative;
+  width: 187px;
+  height: 360px;
+  padding: 0 20px 15px;
+  overflow: hidden;
+}
+
+.panel-right {
+  flex: 1;
+  height: 375px;
+  padding: 15px 19px 0;
+  border-left: 1px dotted #a3a3a3;
+}
+.keyword-list {
+  margin: 0 0 7px;
+  overflow: hidden;
+  position: relative;
+}
+
+dt {
+  padding: 4px 0 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 34px;
+}
+
+dd {
+  margin-left: -10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  zoom: 1;
+  display: inline-block;
+}
+
+.entrance-item {
+  position: relative;
+  float: left;
+  display: block;
+  border-left: 1px solid #ececec;
+  padding: 0 10px;
+  line-height: 18px;
+  height: 18px;
+  margin: 7px 0;
+}
+
+.entrance-item a {
+  color: #666;
+  font-size: 12px;
+}
+
+.entrance-item a:hover {
+  color: #3983e5;
+}
+.product-nav {
+  height: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.product-nav li {
+  line-height: 20px;
+  margin-right: 15px;
+  padding: 0 8px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #3983e5;
+}
+
+.product-nav .active,
+.product-nav>li:hover {
+  background: #3983e5;
+  color: #fff;
+  border-radius: 3px;
+}
+.produce-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: -10px;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  margin: 0 0 10px 10px;
+  transition: all .2s linear;
+  overflow: hidden;
+  height: 160px;
+  position: relative;
+  width: 220px;
+}
+
+.product-item:hover {
+  box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+}
+
+.product-item:hover img {
+  transform: scale(1.05);
+}
+
+.product-item-thumbnail {
+  height: 110px;
+  margin-bottom: 3px;
+  overflow: hidden;
+  position: relative;
+  width: 220px;
+}
+
+.product-item-thumbnail img {
+  transition: transform .3s ease 0s;
+  width: 220px;
+  border: none;
+  vertical-align: middle;
+}
+
+.product-item-name {
+  position: relative;
+  height: 20px;
+  line-height: 20px;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.product-item-info {
+  position: relative;
+  height: 35px;
+  text-align: right;
+  padding: 0 5px;
+}
+
+.price {
+  float: right;
+  font: 22px/1.5 tahoma;
+  color: #f60;
+}
+
+.price dfn {
+  vertical-align: 7px;
+  font: 12px/1.5 arial;
+  color: #666;
+  margin-right: 2px;
+}
+
+.price .price_info {
+  margin-left: 3px;
+  vertical-align: 2px;
+  font: 12px/1.5 "Microsoft yahei";
+  color: #666;
+}
