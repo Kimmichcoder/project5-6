@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>homework1</title>
+</head>
+<body>
+    <pre>
+ # 获取键盘输入
+s = input()
+d = {"DIGITS": 0, "LETTERS": 0}
+for c in s:
+    if c.isdigit():
+        d["DIGITS"] += 1
+    elif c.isalpha():
+        d["LETTERS"] += 1
+    else:
+        pass
+print("LETTERS", d["LETTERS"])
+print("DIGITS", d["DIGITS"])
+    </pre>
+</body>
+</html>

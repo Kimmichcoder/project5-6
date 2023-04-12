@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>python_homework2</title>
+</head>
+<body>
+<pre>
+def is_anagram(str1, str2):
+    list_str1 = list(str1)
+    list_str1.sort()
+    list_str2 = list(str2)
+    list_str2.sort()
+
+    return list_str1 == list_str2
+
+
+print(is_anagram('anagram', 'nagaram'))
+print(is_anagram('cat', 'rat'))
+</pre>
+</body>
+</html>
