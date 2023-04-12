@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>python_homework31</title>
+</head>
+<body>
+<pre>
+    from time import sleep
+
+
+class Person:
+    """Person类"""
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def speak(self):
+        print("我是%s, 今年%s岁了。" % (self.name, self.age))
+
+
+class Student(Person):
+    """Student类"""
+    def __init__(self, name, age, school, id):
+        super(Student, self).__init__(name, age)
+        self.school = school
+        self.my_id = id
+
+    def speak(self):
+        print("我是%s, 今年%s岁了, 我来自%s, 学号是%d。"
+              % (self.name, self.age, self.school, self.my_id))
+
+    def run(self, v, times):
+        return v*times
+
+
+class CollegeStudent(Student):
+    def __init__(self, name, age, school, id, language):
+        super(CollegeStudent, self).__init__(name, age, school, id)
+        self.language = language
+
+    def speak(self):
+        print("我是%s, 今年%s岁了, 我来自%s, 学号是%d，我会%s。"
+              % (self.name, self.age, self.school, self.my_id, self.language))
+
+    def coding(self):
+        print("I am coding", end=" ")
+        for i in range(10):
+            print(".", end="")
+            sleep(1)
+
+
+x = CollegeStudent('Jim', 18, 'Blueking', 200101, 'English')
+x.speak()
+x.coding()
+</pre>
+</body>
+</html>

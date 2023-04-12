@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>python_homework33</title>
+</head>
+<body>
+<pre>
+    from datetime import datetime
+from functools import wraps
+
+
+def log_it(logfile='out.log'):
+    def logging_decorator(func):
+        @wraps(func)
+        def wrapped_function(*args, **kwargs):
+            log = f"[{datetime.now()}] {func.__name__} was called"
+            # 打开logfile，并写入内容
+            with open(logfile, 'a') as fd:
+                # 现在将日志打到指定的logfile
+                fd.write(log + '\n')
+            return func(*args, **kwargs)
+        return wrapped_function
+    return logging_decorator
+
+
+@log_it()
+def my_func1():
+    pass
+
+
+@log_it(logfile='func2.log')
+def my_func2():
+    pass
+
+
+my_func1()
+my_func2()
+</pre>
+</body>
+</html>

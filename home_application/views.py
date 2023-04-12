@@ -47,3 +47,11 @@ def python_homework2(request):
 
 def python_homework3(request):
     return render(request, 'home_application/python_homework3.html')
+
+def python_homework31(request):
+    return render(request, 'home_application/python_homework31.html')
+
+def python_homework32(request):
+    return render(request, 'home_application/python_homework32.html')
+def python_homework33(request):
+    return render(request, 'home_application/python_homework33.html')
