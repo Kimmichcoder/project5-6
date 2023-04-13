@@ -63,10 +63,10 @@
             <a href="javascript:;">个人中心</a>
             <ul class="bk-submenu">
                 <li>
-                    <a href="javascript:;">我的申报</a>
+                    <a href="{{ SITE_URL }}personal_center/">我的申报</a>
                 </li>
                 <li>
-                    <a href="javascript:;">我的审核</a>
+                    <a href="{{ SITE_URL }}review/">我的审核</a>
                 </li>
             </ul>
         </li>
@@ -126,6 +126,10 @@
     <script src="{{ REMOTE_STATIC_URL }}v3/assets/js/jquery-1.10.2.min.js"></script>
     <script src="{{ REMOTE_STATIC_URL }}v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/bkDialog-2.0/js/bkDialog.js"></script>
+    <script src="{{ SITE_URL }}static/datatables-1.10.7/jquery.dataTables.js"></script>
+    <script src="{{ SITE_URL }}static/datatables-1.10.7/dataTables.bootstrap.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/bkMessage-1.0/js/bkMessage.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/validate-1.14.0/js/jquery.validate.js"></script>
 
 
     <!-- 这个是全局配置，如果需要在js中使用app_code和site_url,则这个javascript片段一定要保留 -->
