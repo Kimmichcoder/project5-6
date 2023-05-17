@@ -16,7 +16,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = (
-   # url(r'^$', views.home),
+    url(r'^$', views.home),
     url(r'^dev-guide/$', views.dev_guide),
     url(r'^contact/$', views.contact),
     # 添加 helloworld 路由
@@ -27,5 +27,5 @@ urlpatterns = (
     url(r'^python_homework31/$', views.python_homework31),
     url(r'^python_homework32/$', views.python_homework32),
     url(r'^python_homework33/$', views.python_homework33),
-    url(r"^frontend/$", views.frontend),
+   # url(r"^frontend/$", views.frontend),
 )
